@@ -1,2 +1,6 @@
 set number
 set wildmode=longest,list,full
+set ignorecase
+set smartcase
+set incsearch
+map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
