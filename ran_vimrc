@@ -1,3 +1,6 @@
+" need to install pathogen for vim
+execute pathogen#infect()
+
 set number
 set wildmode=longest,list,full
 set ignorecase
