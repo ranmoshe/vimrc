@@ -19,3 +19,6 @@ set hlsearch
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 set guifont=Menlo:h13
+
+" auto save when focus changes
+:au FocusLost * silent! wall 
