@@ -22,3 +22,8 @@ set guifont=Menlo:h13
 
 " auto save when focus changes
 :au FocusLost * silent! wall 
+
+fu! SaveSess()
+    execute 'mksession! ' . getcwd() . '/.session.vim'
+endfunction
+autocmd VimLeave * call SaveSess()
