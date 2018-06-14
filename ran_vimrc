@@ -28,6 +28,6 @@ fu! SaveSess()
 endfunction
 autocmd VimLeave * call SaveSess()
 
-" python skeleton
+" python template
 " For this to work, run: 'ln -s ~/personal/vimrc/ .vim/vimrc'
-autocmd BufNewFile *.py 0r ~/.vim/vimrc/skeleton.py
+autocmd BufNewFile *.py 0r ~/.vim/vimrc/template.py
