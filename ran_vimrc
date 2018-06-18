@@ -33,4 +33,4 @@ autocmd VimLeave * call SaveSess()
 autocmd BufNewFile *.py 0r ~/.vim/vimrc/template.py
 
 " debug line shortcut
-map <F3> o import ipdb; ipdb.set_trace()
+map <F3> oimport ipdb; ipdb.set_trace()
