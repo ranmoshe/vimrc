@@ -2,6 +2,7 @@
 execute pathogen#infect()
 
 set number
+set ruler
 set wildmode=longest,list,full
 set ignorecase
 set smartcase
