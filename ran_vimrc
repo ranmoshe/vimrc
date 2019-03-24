@@ -35,3 +35,13 @@ autocmd BufNewFile *.py 0r ~/.vim/vimrc/template.py
 
 " debug line shortcut
 map <F3> oimport ipdb; ipdb.set_trace()
+
+" easier pane navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" more natural pane splits
+set splitbelow
+set splitright
