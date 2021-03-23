@@ -1,25 +1,33 @@
 " need to install pathogen for vim
 execute pathogen#infect()
 
-set number
-set ruler
-set wildmode=longest,list,full
-set ignorecase
-set smartcase
-set incsearch
-map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
-filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=2
-set softtabstop=2
-" when indenting with '>', use 4 spaces width
-set shiftwidth=2
-" On pressing tab, insert 4 spaces
+"###########################################################
+"# Options
+"###########################################################
+" On pressing tab, insert 2 spaces
 set expandtab
 set hlsearch
+set ignorecase
+set incsearch
+set number " show current line number 
+set relativenumber " line numbers are relative to current line
+set ruler
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
+set smartcase
+set softtabstop=2
+set tabstop=2
+set wildmode=longest,list,full
+filetype plugin indent on
+" show existing tab with 4 spaces width
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 set guifont=Menlo:h13
+" when 8 lines from the bottom of the page, start scrolling down (keep cursor
+" more centered)
+set scrolloff=8
+" RED alert for surpassing 90 characters in line
+set colorcolumn=90
 
 " auto save when focus changes
 :au FocusLost * silent! wall 
@@ -45,3 +53,21 @@ nnoremap <C-H> <C-W><C-H>
 " more natural pane splits
 set splitbelow
 set splitright
+
+"###########################################################
+"# vim-latex plugin instructions
+"###########################################################
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
