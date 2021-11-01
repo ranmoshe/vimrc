@@ -26,8 +26,8 @@ set guifont=Menlo:h13
 " when 8 lines from the bottom of the page, start scrolling down (keep cursor
 " more centered)
 set scrolloff=8
-" RED alert for surpassing 90 characters in line
-set colorcolumn=90
+" RED alert for surpassing 100 characters in line
+set colorcolumn=100
 
 " auto save when focus changes
 :au FocusLost * silent! wall 
@@ -71,3 +71,8 @@ filetype indent on
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+
+" Now when you select lines in python and hit gq (the default mapping unless you remapped
+" it). It will filter the lines through autopep8 and writes the nicely formatted version 
+" in place
+au FileType python setlocal formatprg=autopep8\ -
